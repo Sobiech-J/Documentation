@@ -38,3 +38,10 @@
 * `sudo snap set nextcloud ports.http=<new-port>`
 * `sudo snap set nextcloud ports.https=<new-port>`
 * if behind a proxy: `sudo nextcloud.occ config:system:set overwritehost --value="example.com:<new-port>"`
+
+**Backup Nextcloud Data**
+* connect second hard drive and mount it the same way as the first
+* `sudo mkfs.ext4 /dev/sdb` if it needs a new filesystem
+* `sudo mount /dev/sdb /mnt/backup-drive`
+* backup data with: `sudo rsync -avr /mnt/data-drive/nextcloud/data /mnt/backup-dive/nextcloud`
+* umount backup disk: `sudo umount /dev/sdb`
