@@ -43,5 +43,9 @@
 * connect second hard drive and mount it the same way as the first
 * `sudo mkfs.ext4 /dev/sdb` if it needs a new filesystem
 * `sudo mount /dev/sdb /mnt/backup-drive`
-* backup data with: `sudo rsync -avr /mnt/data-drive/nextcloud/data /mnt/backup-dive/nextcloud`
+* copy data with: `sudo copy -r /mnt/data-drive/nextcloud/data /mnt/backup/nextcloud`
 * umount backup disk: `sudo umount /dev/sdb`
+* Other ways of copying or syncing (even remotely): https://www.howtogeek.com/135533/how-to-use-rsync-to-backup-your-data-on-linux/
+  * `rsync -av --delete /Directory1 /Directory2`
+  * `rsync -av --delete -e ssh /Directory1 user@192.168.2.123:/Directory2`
+  * For second option the device with the hard drive being copied to needs its user and ip
