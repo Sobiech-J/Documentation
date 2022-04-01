@@ -46,6 +46,6 @@
 * copy data with: `sudo copy -r /mnt/data-drive/nextcloud/data /mnt/backup/nextcloud`
 * umount backup disk: `sudo umount /dev/sdb`
 * Other ways of copying or syncing (even remotely): https://www.howtogeek.com/135533/how-to-use-rsync-to-backup-your-data-on-linux/
-  * `rsync -av --delete /Directory1 /Directory2`
-  * `rsync -av --delete -e ssh /Directory1 user@192.168.2.123:/Directory2`
+  * When both drives are on the same system: `rsync -av --delete /Directory1 /Directory2`
+  * On different systems: `rsync -av --delete -e ssh /Directory1 user@192.168.2.123:/Directory2`
   * For second option the device with the hard drive being copied to needs its user and ip
